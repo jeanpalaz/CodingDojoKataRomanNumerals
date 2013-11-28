@@ -2,10 +2,6 @@ import java.util.Map;
 import java.util.NavigableMap;
 import java.util.TreeMap;
 
-/**
- *  Convertion ....
- *
- */
 public class ConverterNumeralsToRoman {
 	
 	private final NavigableMap<Integer, String> mapConvertOrdered;
@@ -32,18 +28,14 @@ public class ConverterNumeralsToRoman {
 		StringBuilder roman = new StringBuilder();
 		int remainsNumber = numeral;
 		
-		do {
 			for ( Map.Entry<Integer, String> entry : mapConvertOrdered.entrySet()) 
 			{
-				if (remainsNumber >= entry.getKey()) {
+				while (remainsNumber >= entry.getKey()) {
 				  roman.append(entry.getValue());
 				  remainsNumber = remainsNumber - entry.getKey();
-				  break;
 				}
 			}
-		} while (remainsNumber>0);
 		
-		//System.out.println(mapConvertOrdered);
 		return roman.toString(); 
  	}
 }
