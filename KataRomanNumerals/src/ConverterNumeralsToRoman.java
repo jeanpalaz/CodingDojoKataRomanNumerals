@@ -28,16 +28,13 @@ public class ConverterNumeralsToRoman {
 		StringBuilder roman = new StringBuilder();
 		int remainsNumber = numeral;
 		
-		do {
 			for ( Map.Entry<Integer, String> entry : mapConvertOrdered.entrySet()) 
 			{
-				if (remainsNumber >= entry.getKey()) {
+				while (remainsNumber >= entry.getKey()) {
 				  roman.append(entry.getValue());
 				  remainsNumber = remainsNumber - entry.getKey();
-				  break;
 				}
 			}
-		} while (remainsNumber>0);
 		
 		return roman.toString(); 
  	}
