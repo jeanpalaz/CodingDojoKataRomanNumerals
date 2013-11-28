@@ -2,10 +2,6 @@ import java.util.Map;
 import java.util.NavigableMap;
 import java.util.TreeMap;
 
-/**
- *  Convertion ....
- *
- */
 public class ConverterNumeralsToRoman {
 	
 	private final NavigableMap<Integer, String> mapConvertOrdered;
@@ -43,7 +39,6 @@ public class ConverterNumeralsToRoman {
 			}
 		} while (remainsNumber>0);
 		
-		//System.out.println(mapConvertOrdered);
 		return roman.toString(); 
  	}
 }
